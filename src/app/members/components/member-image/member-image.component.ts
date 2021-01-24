@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { ImageFormats } from '../../data/model/image-formats';
+import { ImageFormats } from '../../../data/model/image-formats';
 
 @Component({
     selector: 'member-image',

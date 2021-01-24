@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { Member } from '../../data/model/member';
-import { SectionService } from './section.service';
+import { Member } from '../../../data/model/member';
+import { SectionService } from '../../services/section.service';
 
 @Component({
     selector: 'members-section',

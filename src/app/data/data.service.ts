@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError, first, map } from 'rxjs/operators';
 
-import { dataConfig } from './data.config';
+import { environment } from '../../environments/environment';
 import { Attributes } from './model/attributes';
 import { ResponseData } from './model/response-data';
 import { Section } from './model/section';
@@ -16,7 +16,7 @@ export class DataService {
     constructor(private http: HttpClient) { }
 
     public getAttributes = (id: string): Observable<Attributes> => {
-        return this.http.get(dataConfig.apiUrl).pipe(
+        return this.http.get(environment.apiUrl).pipe(
             catchError(this.handleError),
             map((resData: ResponseData) => {
                 const sectionData = resData.data.find((section: Section) => section.id === id);

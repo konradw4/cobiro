@@ -1,4 +1,6 @@
+import { Member } from "./member";
+
 export interface Attributes {
     title: string;
-    memberCards: object;
+    memberCards: { [key: string]: Member };
 }
