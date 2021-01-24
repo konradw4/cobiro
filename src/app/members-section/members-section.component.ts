@@ -1,6 +1,5 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs';
 
 import { Member } from '../data/model/member';
 import { SectionService } from './section.service';
@@ -10,10 +9,9 @@ import { SectionService } from './section.service';
     templateUrl: './members-section.component.html',
     styleUrls: ['./members-section.component.scss']
 })
-export class MembersSectionComponent implements OnInit, OnDestroy {
+export class MembersSectionComponent implements OnInit {
     public title: string;
     public members: Member[];
-    private subscriptions: Subscription = new Subscription();
 
     constructor(
         private sectionService: SectionService,
@@ -24,9 +22,5 @@ export class MembersSectionComponent implements OnInit, OnDestroy {
         const data = this.route.snapshot.data['data'];
         this.title = this.sectionService.getSectionTitle(data);
         this.members = this.sectionService.getMembers(data);
-    }
-
-    public ngOnDestroy(): void {
-        this.subscriptions.unsubscribe();
     }
 }
