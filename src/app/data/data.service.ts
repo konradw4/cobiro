@@ -6,7 +6,7 @@ import { catchError, first, map } from 'rxjs/operators';
 import { dataConfig } from './data.config';
 import { Attributes } from './model/attributes';
 import { ResponseData } from './model/response-data';
-import { ResponseObject } from './model/response-object';
+import { Section } from './model/section';
 
 @Injectable({
     providedIn: 'root'
@@ -18,10 +18,10 @@ export class DataService {
     public getAttributes = (id: string): Observable<Attributes> => {
         return this.http.get(dataConfig.apiUrl).pipe(
             catchError(this.handleError),
-            map((element: ResponseData) => {
-                const resObject = element.data.find((object: ResponseObject) => object.id === id);
-                if (resObject) {
-                    return resObject.attributes;
+            map((resData: ResponseData) => {
+                const sectionData = resData.data.find((section: Section) => section.id === id);
+                if (sectionData) {
+                    return sectionData.attributes;
                 }
             }),
             first()

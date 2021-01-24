@@ -1,9 +1,9 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-    selector: 'member',
-    templateUrl: './member.component.html',
-    styleUrls: ['./member.component.scss']
+    selector: 'member-item',
+    templateUrl: './member-item.component.html',
+    styleUrls: ['./member-item.component.scss']
 })
 export class MemberComponent {
     @Input() public memberData;

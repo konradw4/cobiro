@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { MemberDetails } from '../data/model/member-details';
+import { MemberDetails } from '../../data/model/member-details';
 
 @Component({
     selector: 'member-details',

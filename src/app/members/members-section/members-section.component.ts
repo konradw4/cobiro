@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { Member } from '../data/model/member';
+import { Member } from '../../data/model/member';
 import { SectionService } from './section.service';
 
 @Component({
