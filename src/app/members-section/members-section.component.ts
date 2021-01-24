@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { DataService } from '../data/data.service';
 import { Attributes } from '../data/model/attributes';
@@ -10,21 +10,23 @@ import { Member } from '../data/model/member';
     styleUrls: ['./members-section.component.scss']
 })
 export class MembersSectionComponent implements OnInit {
-
     public title: string;
     public members: Member[];
+    @Input() private sectionID: string;
 
     constructor(private dataService: DataService) { }
 
     public ngOnInit(): void {
-        this.dataService.getAttributes().subscribe((data: Attributes) => {            
-            this.title = this.getSectionTitle(data);
-            this.members = this.getMembers(data);
+        this.dataService.getAttributes(this.sectionID).subscribe((data: Attributes) => {
+            if (data) {
+                this.title = this.getSectionTitle(data);
+                this.members = this.getMembers(data);
+            }
         });
     }
 
     private getSectionTitle = (data: Attributes): string => {
-        return data.title;
+        return data.title
     };
 
     private getMembers = (data: Attributes): Member[] => {
