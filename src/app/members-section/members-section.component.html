@@ -1,0 +1,8 @@
+<section>
+    <h1>{{title}}</h1>
+    <div class="flexbox-container">
+        <div *ngFor="let member of members">
+            <member [memberData]="member"></member>
+        </div>
+    </div>
+</section>
