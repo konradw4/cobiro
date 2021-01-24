@@ -1,34 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { AppRoutingModule } from './app-routing.module';
 
-import { SectionResolve } from './members/services/section-resolve';
+import { AppRoutingModule } from './app-routing.module';
+import { MembersModule } from './members/members.module';
 
 import { AppComponent } from './app.component';
-import { MembersSectionComponent } from './members/containers/members-section/members-section.component';
-import { MemberComponent } from './members/components/member-item/member-item.component';
-import { MemberImageComponent } from './members/components/member-image/member-image.component';
-import { MemberDetailsComponent } from './members/components/member-details/member-details.component';
-import { MemberHeaderComponent } from './members/components/member-header/member-header.component';
-import { MemberContactComponent } from './members/components/member-contact/member-contact.component';
 
 @NgModule({
     declarations: [
-        AppComponent,
-        MembersSectionComponent,
-        MemberComponent,
-        MemberImageComponent,
-        MemberDetailsComponent,
-        MemberHeaderComponent,
-        MemberContactComponent
+        AppComponent
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
-        HttpClientModule
+        HttpClientModule,
+        MembersModule
     ],
-    providers: [SectionResolve],
+    providers: [],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
