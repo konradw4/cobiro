@@ -1,16 +1,12 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'member',
     templateUrl: './member.component.html',
     styleUrls: ['./member.component.scss']
 })
-export class MemberComponent implements OnInit {
+export class MemberComponent {
     @Input() public memberData;
 
     constructor() { }
-
-    ngOnInit(): void {
-    }
-
 }

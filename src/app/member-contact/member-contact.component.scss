@@ -1,0 +1,15 @@
+@import '../../colors.scss';
+
+.member-contact {
+    padding: 0.5em 1em;
+
+    .phone {
+        color: $dim-gray;
+        margin: 0;
+    }
+
+    .link {
+        color: $navy-blue;
+        text-decoration: none;
+    }
+}
