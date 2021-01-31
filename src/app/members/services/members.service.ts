@@ -6,15 +6,9 @@ import { Member } from '../../data/model/member';
 @Injectable({
     providedIn: 'root'
 })
-export class SectionService {
+export class MembersService {
 
     constructor() { }
-
-    public getSectionTitle = (data: Attributes): string => {
-        if (data) {
-            return data.title
-        }
-    };
 
     public getMembers = (data: Attributes): Member[] => {
         if (data) {

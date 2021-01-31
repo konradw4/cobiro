@@ -1,14 +1,11 @@
-import { Component, Input } from '@angular/core';
-
-import { ImageFormats } from '../../../data/model/image-formats';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
     selector: 'member-image',
     templateUrl: './member-image.component.html',
-    styleUrls: ['./member-image.component.scss']
+    styleUrls: ['./member-image.component.scss'],
+    encapsulation: ViewEncapsulation.None
 })
 export class MemberImageComponent {
-    @Input() public imagesData: ImageFormats;
-
     constructor() { }
 }

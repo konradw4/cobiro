@@ -1,8 +1,20 @@
 <section>
-    <h1 *ngIf="title">{{title}}</h1>
+    <section-header>{{title$ | async}}</section-header>
     <div class="flexbox-container">
-        <div *ngFor="let member of members">
-            <member-item [memberData]="member"></member-item>
+        <div *ngFor="let member of members$ | async">
+            <member-block>
+                <member-image>
+                    <img src="{{member.imageUrl.w400}}" alt="member photo">
+                </member-image>
+                <member-block>
+                    <member-title>{{member.block.title}}</member-title>
+                    <member-paragraph>{{member.block.description}}</member-paragraph>
+                </member-block>
+                <member-block>
+                    <member-link>{{member.block.link}}</member-link>
+                    <member-paragraph>{{member.block.text}}</member-paragraph>
+                </member-block>
+            </member-block>
         </div>
     </div>
 </section>

@@ -4,20 +4,22 @@ import { CommonModule } from '@angular/common';
 import { SectionResolve } from './services/section-resolve';
 
 import { MembersSectionComponent } from './containers/members-section/members-section.component';
-import { MemberComponent } from './components/member-item/member-item.component';
 import { MemberImageComponent } from './components/member-image/member-image.component';
-import { MemberDetailsComponent } from './components/member-details/member-details.component';
-import { MemberHeaderComponent } from './components/member-header/member-header.component';
-import { MemberContactComponent } from './components/member-contact/member-contact.component';
+import { MemberTitleComponent } from './components/member-title/member-title.component';
+import { MemberParagraphComponent } from './components/member-paragraph/member-paragraph.component';
+import { MemberLinkComponent } from './components/member-link/member-link.component';
+import { MemberBlockComponent } from './components/member-block/member-block.component';
+import { SectionHeaderComponent } from './components/section-header/section-header.component';
 
 @NgModule({
   declarations: [
     MembersSectionComponent,
-    MemberComponent,
     MemberImageComponent,
-    MemberDetailsComponent,
-    MemberHeaderComponent,
-    MemberContactComponent
+    MemberTitleComponent,
+    MemberParagraphComponent,
+    MemberLinkComponent,
+    MemberBlockComponent,
+    SectionHeaderComponent
   ],
   imports: [
     CommonModule

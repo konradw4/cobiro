@@ -9,6 +9,6 @@ export class SectionResolve implements Resolve<Attributes> {
     constructor(private dataService: DataService) { }
 
     resolve(route: ActivatedRouteSnapshot) {
-        return this.dataService.getAttributes(route.params['id']);
+        return this.dataService.getAttributes(route.paramMap.get('id'));
     }
 } 

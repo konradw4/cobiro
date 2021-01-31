@@ -8,7 +8,8 @@ const routes: Routes = [
     { 
         path: 'members/:id',
         component: MembersSectionComponent,
-        resolve: { data: SectionResolve }
+        // old solution
+        // resolve: { data: SectionResolve }
     }
 ];
 
