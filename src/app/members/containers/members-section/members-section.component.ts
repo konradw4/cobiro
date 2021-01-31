@@ -15,7 +15,7 @@ import { MembersService } from '../../services/members.service';
 })
 export class MembersSectionComponent implements OnInit {
     public title$: Observable<string>;
-    public members$: Observable<any>;
+    public members$: Observable<Member[]>;
     public attributes$: Observable<Attributes>;
 
     constructor(
