@@ -1,7 +1,7 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
-import { catchError, first, map } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 
 import { environment } from '../../environments/environment';
 import { Attributes } from './model/attributes';
@@ -23,8 +23,7 @@ export class DataService {
                 if (sectionData) {
                     return sectionData.attributes;
                 }
-            }),
-            first()
+            })
         );
     };
 

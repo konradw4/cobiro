@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { map, switchMap } from 'rxjs/operators';
+import { map, shareReplay, switchMap } from 'rxjs/operators';
 import { DataService } from 'src/app/data/data.service';
 import { Attributes } from 'src/app/data/model/attributes';
 
@@ -27,7 +27,8 @@ export class MembersSectionComponent implements OnInit {
     public ngOnInit(): void {
         this.attributes$ = this.route.params.pipe(
             map(params => params.id),
-            switchMap(id => this.dataService.getAttributes(id))
+            switchMap(id => this.dataService.getAttributes(id)),
+            shareReplay()
         );
 
         this.title$ = this.attributes$.pipe(
